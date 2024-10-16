@@ -14,16 +14,19 @@ I2SClass I2S;
 // Easiest is to use absolute path for the audio filename
 #include "incbin.h"
 //INCBIN (Sound,"nogood.mp3"); // replace filename with your MP3 file
-INCBIN (Sound,"good.mp3"); // replace filename with your MP3 file
+//INCBIN (Sound,"good.mp3"); // replace filename with your MP3 file
+INCBIN (Sound,"good2.mp3"); // replace filename with your MP3 file
 
 // Note: Not all mp3 files work.  Specifically, MP3 recorded using Windows Sound Recorder would not play in my testing.
 // Also, be careful about the size of the sound file, as it will take space out of the heap to store the data
 // These short sound files were tested and worked:
 // https://pixabay.com/users/brvhrtz-33128829/ stab-f-01-brvhrtz-224599.mp3
 // https://pixabay.com/users/ribhavagrawal-39286533/  coin-recieved-230517.mp3
-
 // nogood.mp3 is an example of a MP3 file that DOES NOT work
-// when that was converted by https://restream.io/tools/mp3-converter into good.mp3, the recording works.
+
+// nogood.mp3 was recorded using Windows Sound Recorder.
+// good.mp3 is a re-encoding done by https://restream.io/tools/mp3-converter -- that works.
+// good2.mp3 is nogood.mp3 after its ID3 tag (and any other properties) removed per https://www.frightideas.com/blog/post/removing-id3-tags
 
 // Filed https://github.com/espressif/arduino-esp32/issues/10469
 
