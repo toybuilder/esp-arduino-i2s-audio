@@ -13,13 +13,19 @@ I2SClass I2S;
 // See INCBIN documentation about the location of the audio file. https://reference.arduino.cc/reference/en/libraries/incbin/
 // Easiest is to use absolute path for the audio filename
 #include "incbin.h"
-INCBIN (Sound,"coin-recieved-230517.mp3"); // replace filename with your MP3 file
+//INCBIN (Sound,"nogood.mp3"); // replace filename with your MP3 file
+INCBIN (Sound,"good.mp3"); // replace filename with your MP3 file
 
 // Note: Not all mp3 files work.  Specifically, MP3 recorded using Windows Sound Recorder would not play in my testing.
 // Also, be careful about the size of the sound file, as it will take space out of the heap to store the data
 // These short sound files were tested and worked:
 // https://pixabay.com/users/brvhrtz-33128829/ stab-f-01-brvhrtz-224599.mp3
 // https://pixabay.com/users/ribhavagrawal-39286533/  coin-recieved-230517.mp3
+
+// nogood.mp3 is an example of a MP3 file that DOES NOT work
+// when that was converted by https://restream.io/tools/mp3-converter into good.mp3, the recording works.
+
+// Filed https://github.com/espressif/arduino-esp32/issues/10469
 
 void play_audio() {
   I2S.setPins(23, 4, 33, -1, -1); //SCK, WS, SDOUT, SDIN, MCLK
